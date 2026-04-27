@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Plugins - Rashu OFC</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Header Area */
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 15px 40px 15px;
+        }
+
+        .page-title {
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        /* Action Bar (Search + Premium) */
+        .header-action-area {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .search-bar {
+            flex: 1;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 2px solid #000;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .premium-btn {
+            background: #000;
+            color: #fff;
+            padding: 0 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* Plugin Accordion Card */
+        .plugin-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .plugin-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .plugin-header {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .plugin-header:hover { background: #fafafa; }
+
+        .plugin-title {
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Hidden Code Section */
+        .code-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: #1e1e1e;
+        }
+
+        .code-section.open {
+            max-height: 500px; /* Adjust based on code length */
+            border-top: 1px solid #333;
+        }
+
+        .code-wrapper {
+            padding: 15px;
+            position: relative;
+        }
+
+        pre {
+            margin: 0;
+            color: #d4d4d4;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid #444;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .copy-btn:hover { background: #fff; color: #000; }
+
+        .arrow {
+            transition: 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .plugin-card.active .arrow { transform: rotate(180deg); }
+
+        .back-home {
+            margin-top: 30px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            border-bottom: 2px solid #000;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main-content">
+    <div class="page-title">Bot Plugins</div>
+
+    <div class="header-action-area">
+        <input type="text" id="pluginSearch" class="search-bar" placeholder="Search plugin..." onkeyup="searchPlugin()">
+        <a href="prmcmd.html" class="premium-btn">Premium Command</a>
+    </div>
+
+    <div class="plugin-container" id="pluginList">
+        
+        <div class="plugin-card">
+            <div class="plugin-header" onclick="togglePlugin(this)">
+                <div class="plugin-title"><span>⚡</span> Alive Command</div>
+                <div class="arrow">▼</div>
+            </div>
+            <div class="code-section">
+                <div class="code-wrapper">
+                    <button class="copy-btn" onclick="copyCode('code-alive', this)">Copy</button>
+                    <pre id="code-alive">
+const { cmd } = require('../command')
+
+cmd({
+    pattern: "alive",
+    desc: "Check bot online",
+    category: "main",
+    filename: __filename
+},
+async(conn, mek, m,{pushname, reply}) => {
+try{
+return await conn.sendMessage(from,{image: {url: `https://telegra.ph/file/rashu.jpg`},caption: `Hey ${pushname} I am Alive Now!`},{quoted: mek})
+}catch(e){
+reply(`${e}`)
+}
+})</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="plugin-card">
+            <div class="plugin-header" onclick="togglePlugin(this)">
+                <div class="plugin-title"><span>📜</span> Menu Command</div>
+                <div class="arrow">▼</div>
+            </div>
+            <div class="code-section">
+                <div class="code-wrapper">
+                    <button class="copy-btn" onclick="copyCode('code-menu', this)">Copy</button>
+                    <pre id="code-menu">
+const { cmd, commands } = require('../command')
+
+cmd({
+    pattern: "menu",
+    desc: "get bot commands",
+    category: "main",
+    filename: __filename
+},
+async(conn, mek, m,{from, reply}) => {
+try{const config = require('../config')
+const { cmd, commands } = require('../command')
+
+cmd({
+    pattern: "menu",
+    desc: "Show the interactive command menu.",
+    category: "main",
+    react: "📑",
+    filename: __filename
+},
+async (conn, mek, m, { from, pushname, reply }) => {
+    try {
+        let menuImg = "https://i.ibb.co/wht9HsYF/20260301-084015-2.jpg"
+
+        let menuText = `*👋 Hᴇʟʟᴏ ${pushname}*
+
+*Qᴜᴇᴇɴ-Rᴀꜱʜᴜ-Mᴅ Mᴇɴᴜ Lɪꜱᴛ*
+
+1️⃣ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ
+2️⃣ ɢʀᴏᴜᴘ ᴄᴏᴍᴍᴀɴᴅꜱ
+3️⃣ ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴏᴍᴍᴀɴᴅꜱ
+4️⃣ ᴍᴀɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ
+5️⃣ ᴄᴏɴᴠᴇʀᴛ ᴄᴏᴍᴍᴀɴᴅꜱ
+6️⃣ ꜱᴇᴀʀᴄʜ ᴄᴏᴍᴍᴀɴᴅꜱ
+
+*Reply with number Select Other Menu*
+
+> *ᴘᴏᴡᴇʀᴅ ʙʏ Qᴜᴇᴇɴ ʀᴀꜱʜᴜ ᴏꜰᴄ*`;
+
+        const sentMsg = await conn.sendMessage(from, {
+            image: { url: menuImg },
+            caption: menuText
+        }, { quoted: mek })
+
+        const msgId = sentMsg.key.id
+
+        const handler = async (update) => {
+            try {
+                const msg = update.messages[0]
+                if (!msg.message?.extendedTextMessage) return
+
+                const userReply = msg.message.extendedTextMessage.text.toLowerCase()
+                const contextId = msg.message.extendedTextMessage.contextInfo?.stanzaId
+
+                if (contextId !== msgId) return
+
+                // 🛑 STOP
+                if (userReply === "stop") {
+                    conn.ev.off('messages.upsert', handler)
+                    return await conn.sendMessage(from, { text: "🛑 Menu Closed" })
+                }
+
+                let selectedCategory = ""
+
+                if (userReply === '1') selectedCategory = "owner"
+                else if (userReply === '2') selectedCategory = "group"
+                else if (userReply === '3') selectedCategory = "download"
+                else if (userReply === '4') selectedCategory = "main"
+                else if (userReply === '5') selectedCategory = "convert"
+                else if (userReply === '6') selectedCategory = "search"
+
+                if (!selectedCategory) return
+
+                let cmdList = `📂 *RASHU ${selectedCategory.toUpperCase()} COMMANDS*\n\n`
+
+                let found = false
+
+                for (let i = 0; i < commands.length; i++) {
+                    if (commands[i].category === selectedCategory) {
+                        cmdList += `🪄 𝐔𝐒𝐄 : ${commands[i].pattern}\n`
+                        cmdList += `🖇️ 𝐃𝐄𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍 : ${commands[i].desc || "No description"}\n\n`
+                        found = true
+                    }
+                }
+
+                if (found) {
+                    await conn.sendMessage(from, {
+                        image: { url: menuImg },
+                        caption: cmdList
+                    }, { quoted: msg })
+                }
+
+                // ❌ DO NOT OFF HERE (allow multi use)
+
+            } catch (err) {
+                console.log("Menu Handler Error:", err)
+            }
+        }
+
+        conn.ev.on('messages.upsert', handler)
+
+    } catch (e) {
+        console.log(e)
+        reply(`Error: ${e}`)
+    }
+})</pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-home">< Back to Home</a>
+</div>
+
+<script>
+// Toggle Plugin Visibility
+function togglePlugin(header) {
+    const card = header.parentElement;
+    const content = card.querySelector('.code-section');
+    
+    // Close other cards (Optional - if you want only one open at a time)
+    // document.querySelectorAll('.code-section').forEach(s => s.classList.remove('open'));
+    
+    content.classList.toggle('open');
+    card.classList.toggle('active');
+}
+
+// Copy Code Function
+function copyCode(id, btn) {
+    const code = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "Copied!";
+        setTimeout(() => { btn.innerText = originalText; }, 2000);
+    });
+}
+
+// Search Function
+function searchPlugin() {
+    let input = document.getElementById('pluginSearch').value.toLowerCase();
+    let cards = document.getElementsByClassName('plugin-card');
+    
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector('.plugin-title').innerText.toLowerCase();
+        cards[i].style.display = title.includes(input) ? "block" : "none";
+    }
+}
+</script>
+
+</body>
+</html>
