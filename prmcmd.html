@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plugins - Rashu OFC</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 15px 40px 15px;
+        }
+
+        /* Header Navigation */
+        .top-nav {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: #000;
+        }
+
+        .premium-tag-title {
+            background: #ff0000;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 5px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        /* Action Bar */
+        .header-action-area {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 2px solid #000;
+            font-size: 0.9rem;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        /* Plugin Accordion Card */
+        .plugin-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .plugin-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .plugin-header {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .plugin-header:hover { background: #fafafa; }
+
+        .plugin-title {
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .premium-icon { color: #f1c40f; }
+
+        /* Hidden Code Section */
+        .code-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: #1e1e1e;
+        }
+
+        .code-section.open {
+            max-height: 600px;
+            border-top: 1px solid #333;
+        }
+
+        .code-wrapper {
+            padding: 15px;
+            position: relative;
+        }
+
+        pre {
+            margin: 0;
+            color: #d4d4d4;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid #444;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+
+        .arrow { transition: 0.3s; font-size: 0.8rem; }
+        .plugin-card.active .arrow { transform: rotate(180deg); }
+
+        .back-btn {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bottom-nav { margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+<div id="main-content">
+    
+    <div class="top-nav">
+        <a href="index.html" class="back-btn"> Back to Home</a>
+    </div>
+
+    <div class="page-title">Premium Cmds <span class="premium-tag-title">VIP</span></div>
+
+    <div class="header-action-area">
+        <input type="text" id="pluginSearch" class="search-bar" placeholder="සොයන්න (Search Premium Plugins)..." onkeyup="searchPlugin()">
+    </div>
+
+    <div class="plugin-container" id="pluginList">
+        
+        <div class="plugin-card">
+            <div class="plugin-header" onclick="togglePlugin(this)">
+                <div class="plugin-title"><span class="premium-icon">⭐</span> Auto Bio Update</div>
+                <div class="arrow">▼</div>
+            </div>
+            <div class="code-section">
+                <div class="code-wrapper">
+                    <button class="copy-btn" onclick="copyCode('p-1', this)">Copy</button>
+                    <pre id="p-1">
+// Auto Profile Status Update
+setInterval(async () => {
+    const time = new Date().toLocaleString()
+    await conn.updateProfileStatus(`Queen Rashu MD | Active: ${time}`)
+}, 60000)</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="plugin-card">
+            <div class="plugin-header" onclick="togglePlugin(this)">
+                <div class="plugin-title"><span class="premium-icon">⭐</span> Anti-Delete Msg</div>
+                <div class="arrow">▼</div>
+            </div>
+            <div class="code-section">
+                <div class="code-wrapper">
+                    <button class="copy-btn" onclick="copyCode('p-2', this)">Copy</button>
+                    <pre id="p-2">
+conn.ev.on('messages.delete', async (u) => {
+    // Anti-Delete logic here
+    console.log('Message Deleted:', u)
+})</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ TikTok No-Watermark</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Auto Reaction Mode</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ YouTube MP3 High Quality</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Instagram Reels Direct</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Group Antilink (Hard)</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ AI Image Generator</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Voice Changer (Robot/Child)</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Facebook Video Downloader</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ APK Downloader</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Sticker Search (Bstk)</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Subtitle Downloader</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Movie Search Info</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Welcome Image Creator</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Goodbye Message Custom</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Chat GPT-4 Integration</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Anti-Call Feature</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Auto Typing/Recording</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Mention All (Invisible)</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Group Admin Dashboard</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Font Style Changer</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Google News (Live)</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Weather Forecaster</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ GitHub Repo Search</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ URL Shortener</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Text To Handwriting</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Logo Maker (Gaming)</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ Torrent Search</div><div>▼</div></div></div>
+        <div class="plugin-card"><div class="plugin-header"><div class="plugin-title">⭐ System Stats Checker</div><div>▼</div></div></div>
+
+    </div>
+
+    <div class="bottom-nav">
+        <a href="index.html" class="back-btn"> Back to Home</a>
+    </div>
+</div>
+
+<script>
+function togglePlugin(header) {
+    const card = header.parentElement;
+    const content = card.querySelector('.code-section');
+    if(content) {
+        content.classList.toggle('open');
+        card.classList.toggle('active');
+    }
+}
+
+function copyCode(id, btn) {
+    const code = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(code).then(() => {
+        const original = btn.innerText;
+        btn.innerText = "Copied!";
+        setTimeout(() => { btn.innerText = original; }, 2000);
+    });
+}
+
+function searchPlugin() {
+    let input = document.getElementById('pluginSearch').value.toLowerCase();
+    let cards = document.getElementsByClassName('plugin-card');
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].innerText.toLowerCase();
+        cards[i].style.display = title.includes(input) ? "block" : "none";
+    }
+}
+</script>
+
+</body>
+</html>
