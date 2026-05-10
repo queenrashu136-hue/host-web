@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIPUN | Rashu OFC</title>
+
+    <!-- Adsterra Ad Script -->
+    <script src="https://pl29407875.profitablecpmratenetwork.com/5f/26/ee/5f26ee08bf649823361f42a93221d4ab.js"></script>
+
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         /* --- Themes --- */
         :root {
@@ -24,7 +29,10 @@
         }
 
         body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             font-family: 'Segoe UI', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -34,49 +42,133 @@
 
         /* --- Theme Toggle --- */
         .theme-toggle {
-            position: fixed; top: 25px; right: 25px; z-index: 2001;
-            background: var(--btn-bg); border: 1px solid var(--border-color);
-            color: var(--text-color); padding: 8px; border-radius: 50%;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 2001;
+            background: var(--btn-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* --- Snowfall Effect --- */
         #snow-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 9999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
         }
-        .snowflake { position: absolute; top: -10px; color: #fff; user-select: none; animation: fall linear infinite; }
-        @keyframes fall { to { transform: translateY(100vh); } }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            user-select: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
 
         /* --- Dashboard Text --- */
         .dashboard-link {
-            position: fixed; top: 25px; left: 25px; z-index: 1001;
-            font-weight: 900; letter-spacing: 2px; text-decoration: none;
-            color: var(--text-color); font-size: 1.2rem; text-transform: uppercase; opacity: 0; transition: 0.5s;
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 1001;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: 0.5s;
         }
 
         /* --- BOTTOM NAV --- */
         .bottom-nav {
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 500px; background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(15px); border: 1px solid var(--border-color);
-            border-radius: 20px; display: flex; justify-content: space-around;
-            padding: 12px; z-index: 2000; opacity: 0; transition: 1s ease-in-out;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px;
+            z-index: 2000;
+            opacity: 0;
+            transition: 1s ease-in-out;
         }
-        .nav-item { display: flex; flex-direction: column; align-items: center; color: #888; text-decoration: none; cursor: pointer; transition: 0.3s; }
-        .nav-item i { width: 22px; height: 22px; margin-bottom: 4px; }
-        .nav-item span { font-size: 10px; font-weight: 600; text-transform: uppercase; }
-        .nav-item:hover, .nav-item.active { color: #ffffff; }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #888;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-item i {
+            width: 22px;
+            height: 22px;
+            margin-bottom: 4px;
+        }
+
+        .nav-item span {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: #ffffff;
+        }
 
         /* --- Splash Screen --- */
         #splash-screen {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #000000; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; z-index: 3000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
         }
-        .welcome-text { font-size: 3.2rem; font-weight: 900; letter-spacing: 10px; color: #ffffff; margin-bottom: 10px; }
-        
-        /* --- New Typing Text Style --- */
+
+        .welcome-text {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        /* --- Typing Text --- */
         #typing-text {
             font-size: 14px;
             font-weight: 300;
@@ -87,53 +179,140 @@
             margin-bottom: 40px;
         }
 
-        .progress-container { width: 280px; height: 2px; background: #222; position: absolute; bottom: 12%; overflow: hidden; }
-        .progress-bar { width: 0%; height: 100%; background: #ffffff; animation: progress 3.8s linear forwards; }
-        @keyframes progress { to { width: 100%; } }
+        .progress-container {
+            width: 280px;
+            height: 2px;
+            background: #222;
+            position: absolute;
+            bottom: 12%;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #ffffff;
+            animation: progress 3.8s linear forwards;
+        }
+
+        @keyframes progress {
+            to {
+                width: 100%;
+            }
+        }
 
         /* --- Main Content --- */
         #main-content {
-            display: flex; flex-direction: column; align-items: center;
-            padding: 100px 0 120px 0; min-height: 100vh;
-            visibility: hidden; opacity: 0; transition: 1.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 0 120px 0;
+            min-height: 100vh;
+            visibility: hidden;
+            opacity: 0;
+            transition: 1.2s ease-in-out;
         }
-        .page { display: none; width: 100%; flex-direction: column; align-items: center; }
-        .page.active { display: flex; }
-        
+
+        .page {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
         .card {
-            background-color: var(--card-bg); border: 1px solid var(--border-color);
-            width: 90%; max-width: 400px; padding: 40px 25px; border-radius: 20px;
-            text-align: center; margin-bottom: 30px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 400px;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
         }
-        .menu-title { color: var(--text-color); font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 3px; font-weight: bold; }
+
+        .menu-title {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
 
         .nav-btn {
-            width: 100%; padding: 15px; margin-bottom: 12px;
-            background: var(--btn-bg); border: none;
-            color: var(--text-color); border-radius: 12px;
-            font-weight: bold; cursor: pointer; text-decoration: none;
-            display: block; transition: 0.3s;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: var(--btn-bg);
+            border: none;
+            color: var(--text-color);
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
         }
-        .nav-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        .nav-btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
 
         .search-input {
-            width: 100%; padding: 12px; background: #111; border: 1px solid #333;
-            color: #fff; border-radius: 10px; margin-bottom: 15px; outline: none;
-        }
-        .log-box {
-            width: 100%; height: 200px; background: #050505; border: 1px solid #222;
-            border-radius: 10px; padding: 10px; font-family: monospace; font-size: 12px;
-            overflow-y: auto; text-align: left; color: #00ff00;
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            outline: none;
         }
 
-        .animate { animation: slideUp 0.8s forwards ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .log-box {
+            width: 100%;
+            height: 200px;
+            background: #050505;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            overflow-y: auto;
+            text-align: left;
+            color: #00ff00;
+        }
+
+        .animate {
+            animation: slideUp 0.8s forwards ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <div id="snow-container"></div>
-    <a href="javascript:location.reload()" class="dashboard-link" id="dash-text">ＤＡＳＨＢＯＲＤ</a>
+
+    <a href="javascript:location.reload()" class="dashboard-link" id="dash-text">
+        ＤＡＳＨＢＯＲＤ
+    </a>
 
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
         <i data-lucide="sun"></i>
@@ -141,154 +320,182 @@
 
     <div id="splash-screen">
         <h1 class="welcome-text">WELCOME</h1>
-        <div id="typing-text"></div> <div class="progress-container"><div class="progress-bar"></div></div>
+        <div id="typing-text"></div>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
     </div>
 
     <div id="main-content">
+
         <div id="home" class="page active">
             <div class="card animate">
+
                 <div class="menu-title">RASHU OFC WEB</div>
-                
+
                 <a href="https://bots.nipun.site" class="nav-btn">DEPLOY BOT</a>
                 <a href="base.html" class="nav-btn">BOT BUY BASE</a>
-                <a href="media.html" class="nav-btn">MEDIA DAWNLOAD</a>
+                <a href="media.html" class="nav-btn">MEDIA DOWNLOAD</a>
                 <a href="other.html" class="nav-btn">OTHER</a>
+
             </div>
         </div>
 
         <div id="cpu" class="page">
             <div class="card">
+
                 <div class="menu-title">BOT COMMANDS</div>
+
                 <input type="text" class="search-input" placeholder="Search Command...">
+
                 <div style="text-align:left; font-size: 13px;">
-                    <div style="padding:10px; border-bottom:1px solid #222;"><b>menu</b> - Show all commands</div>
-                    <div style="padding:10px; border-bottom:1px solid #222;"><b>alive</b> - Check bot status</div>
+                    <div style="padding:10px; border-bottom:1px solid #222;">
+                        <b>menu</b> - Show all commands
+                    </div>
+
+                    <div style="padding:10px; border-bottom:1px solid #222;">
+                        <b>alive</b> - Check bot status
+                    </div>
                 </div>
+
             </div>
         </div>
 
-        <div id="activity" class="page">
-            <div class="card">
-                <div class="menu-title">SYSTEM ACTIVITY</div>
-                <div class="log-box" id="activity-logs">
-                    [SYSTEM] Starting Scanner...<br>
-                    [INFO] Connection Stable...<br>
-                </div>
-            </div>
-        </div>
-
-        <div id="db" class="page">
-            <div class="card">
-                <div class="menu-title">LIVE LOGS</div>
-                <div class="log-box" id="live-logs" style="color: #fff;">
-                    Waiting for logs...
-                </div>
-            </div>
-        </div>
-
-        <div id="settings" class="page">
-            <div class="card">
-                <div class="menu-title">SETTINGS</div>
-                <button class="nav-btn">Clear Cache</button>
-                <button class="nav-btn">Update Bot</button>
-                <button class="nav-btn" style="background:#ff4444; color:white;">Restart System</button>
-            </div>
-        </div>
     </div>
 
     <div class="bottom-nav" id="bottom-nav">
-    <div class="nav-item active" onclick="showPage('home', this)"><i data-lucide="home"></i><span>Home</span></div>
-    <div class="nav-item" onclick="showPage('cpu', this)"><i data-lucide="cpu"></i><span>Cmds</span></div>
-    <div class="nav-item" onclick="showPage('activity', this)"><i data-lucide="activity"></i><span>Status</span></div>
-    <div class="nav-item" onclick="showPage('db', this)"><i data-lucide="database"></i><span>Logs</span></div>
-    
-    <div class="nav-item" onclick="window.location.href='setting.html'">
-        <i data-lucide="settings"></i><span>Settings</span>
-    </div>
-</div>
 
+        <div class="nav-item active" onclick="showPage('home', this)">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </div>
+
+        <div class="nav-item" onclick="showPage('cpu', this)">
+            <i data-lucide="cpu"></i>
+            <span>Cmds</span>
+        </div>
+
+        <div class="nav-item" onclick="window.location.href='setting.html'">
+            <i data-lucide="settings"></i>
+            <span>Settings</span>
+        </div>
+
+    </div>
 
     <script>
-        // Typing Effect Logic
+
+        // Typing Effect
         const textToType = "Queen Rashu Official Web Site";
         const typingContainer = document.getElementById("typing-text");
+
         let index = 0;
 
         function typeEffect() {
             if (index < textToType.length) {
                 typingContainer.innerHTML += textToType.charAt(index);
                 index++;
-                setTimeout(typeEffect, 50); // Speed of typing
+                setTimeout(typeEffect, 50);
             }
         }
 
-        // Light/Dark Mode Logic
+        // Theme Toggle
         function toggleTheme() {
+
             const body = document.body;
             const btn = document.getElementById('theme-btn');
+
             if (body.getAttribute('data-theme') === 'light') {
+
                 body.removeAttribute('data-theme');
                 btn.innerHTML = '<i data-lucide="sun"></i>';
+
             } else {
+
                 body.setAttribute('data-theme', 'light');
                 btn.innerHTML = '<i data-lucide="moon"></i>';
+
             }
+
             lucide.createIcons();
         }
 
-        // Snowfall
+        // Snow Effect
         function createSnow() {
+
             const container = document.getElementById('snow-container');
+
             const flake = document.createElement('div');
+
             flake.innerHTML = '❄';
+
             flake.classList.add('snowflake');
+
             flake.style.left = Math.random() * 100 + 'vw';
-            flake.style.animationDuration = Math.random() * 3 + 2 + 's';
+
+            flake.style.animationDuration =
+                Math.random() * 3 + 2 + 's';
+
             flake.style.opacity = Math.random() * 0.5;
+
             container.appendChild(flake);
+
             setTimeout(() => flake.remove(), 5000);
         }
+
         setInterval(createSnow, 200);
 
         // Page Switch
         function showPage(pageId, element) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('.page')
+                .forEach(p => p.classList.remove('active'));
+
+            document.querySelectorAll('.nav-item')
+                .forEach(n => n.classList.remove('active'));
+
+            document.getElementById(pageId)
+                .classList.add('active');
+
             element.classList.add('active');
         }
 
         // Loader
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
+
             lucide.createIcons();
-            
-            // Start typing effect slightly after splash appears
+
             setTimeout(typeEffect, 1000);
 
-            setTimeout(function() {
+            setTimeout(function () {
+
                 const splash = document.getElementById('splash-screen');
+
                 const main = document.getElementById('main-content');
+
                 const dashText = document.getElementById('dash-text');
+
                 const nav = document.getElementById('bottom-nav');
 
                 splash.style.opacity = '0';
+
                 setTimeout(() => {
+
                     splash.style.display = 'none';
+
                     main.style.visibility = 'visible';
+
                     main.style.opacity = '1';
+
                     dashText.style.opacity = '1';
+
                     nav.style.opacity = '1';
+
                 }, 800);
+
             }, 3800);
         });
 
-        // Logs
-        setInterval(() => {
-            const logs = document.getElementById('live-logs');
-            const time = new Date().toLocaleTimeString();
-            logs.innerHTML += `<div>[${time}] System Running...</div>`;
-            logs.scrollTop = logs.scrollHeight;
-        }, 4000);
     </script>
+
 </body>
 </html>
